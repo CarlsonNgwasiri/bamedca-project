@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="{% url 'home' %}">BAMEDCA</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'branch' %}">Branches</a></li>
+          <li><a href="{% url 'events' %}">Events & Announcement</a></li>
+          <li><a class="active" href="{% url 'projects' %}">Projects</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2>Projects</h2>
+       
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= projects Section ======= -->
+    <section id="projects" class="projects">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          {% for projects in projects %}
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{projects.image.url}}" alt="...">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'project-details' ID=projects.id %}">{{projects.title}}</a></h5>
+                
+                <p class="card-text">{{projects.description}}</p>
+              </div>
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End projects Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock content %}

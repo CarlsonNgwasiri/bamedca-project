@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="{% url 'home' %}">BAMEDCA</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a class="active" href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'branch' %}">Branches</a></li>
+          <li><a href="{% url 'events' %}">Events & Announcement</a></li>
+          <li><a href="{% url 'projects' %}">Projects</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2>About Us</h2>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{% static 'assets/img/village4.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>Bamendankwe Developement and Cultural Association</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dicta consequuntur magni est obcaecati quidem molestiae quisquam quos! Illum, tempora.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae rerum quis ab, voluptatum quos facilis nostrum ullam sunt qui eaque!
+              <br> Bamedca is composed of four main bodies:
+            </p>
+            <ul>
+              {% for about in about %}
+              <li><i class="bi bi-check-circle"></i> <a href="{% url 'about-details' ID=about.id%}">{{about.title}}</a></li>
+              {% endfor %}
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-4 col-4 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="23457"+ data-purecounter-duration="1" class="purecounter"></span>
+            <p>Members</p>
+          </div>
+
+          <div class="col-lg-4 col-4 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Branches</p>
+          </div>
+
+          <div class="col-lg-4 col-4 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="76" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Quaters</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= executive Section ======= -->
+    <section id="executive" class="executive">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>National Executive</h2>
+          <p>Dynamic Team</p>
+        </div>
+        
+        <div class="executive-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            {% for exco in exco %}
+            <div class="swiper-slide">
+              <div class="executive-wrap">
+                <div class="executive-item">
+                  <img src="{{exco.image.url}}" class="executive-img" alt="">
+                  <h3>{{exco.name}}</h3>
+                  <h4>{{exco.role}}</h4>
+                  <p>
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    {{exco.intro}}
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End executive item -->
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section><!-- End executive Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock content %}

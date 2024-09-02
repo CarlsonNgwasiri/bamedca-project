@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="{% url 'home' %}">BAMEDCA</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a class="active" href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'branch' %}">Branches</a></li>
+          <li><a href="{% url 'events' %}">Events & Announcement</a></li>
+          <li><a href="{% url 'projects' %}">Projects</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2>{{objects.name}}</h2>
+      </div>
+    </div><!-- End Breadcrumbs -->
+    
+    <!-- ======= Cource Details Section ======= -->
+    <section id="branch-details" class="branch-details">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <img src="{{objects.image.url}}" class="img-fluid" alt="">
+            <h3>{{objects.title}}</h3>
+            <p>
+              {{objects.description}}
+            </p>
+          </div>
+          <div class="col-lg-4">
+
+            <div class="branch-info d-flex justify-content-between align-items-center">
+              <h5>President</h5>
+              <p><a href="#">{{objects.excoPresi}}</a></p>
+            </div>
+
+            <div class="branch-info d-flex justify-content-between align-items-center">
+              <h5>Secretary General</h5>
+              <p><a href="#">{{objects.excoSG}}</a></p>
+            </div>
+
+            <div class="branch-info d-flex justify-content-between align-items-center">
+              <h5>Members</h5>
+              <p>{{objects.members}}</p>
+            </div>
+
+            <div class="branch-info d-flex justify-content-between align-items-center">
+              <h5>Active Towns</h5>
+              <p>{{objects.activeTown}}</p>
+            </div>
+
+          </div>
+        </div><br><br>
+        <div class="section-title">
+          <h2>More About {{objects.name}}</h2>
+        </div>
+        <p>
+          {{objects.paragraph1}}
+        </p><br>
+        <p>
+          {{objects.paragraph2}}
+        </p><br>
+        <p>
+          {{objects.paragraph3}}
+        </p><br>
+
+      </div>
+    </section><!-- End Cource Details Section -->
+
+    
+ <!-- ======= executive Section ======= -->
+ <section id="executive" class="executive">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>{{objects.name}} Executive</h2>
+      <p>Dynamic Team</p>
+    </div>
+
+    <div class="executive-slider swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="executive-wrap">
+            <div class="executive-item">
+              <img src="{{objects.presiImage.url}}" class="executive-img" alt="">
+              <h3>{{objects.excoPresi}}</h3>
+              <h4>President</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{objects.introPresi}}
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div><!-- End executive item -->
+
+        <div class="swiper-slide">
+          <div class="executive-wrap">
+            <div class="executive-item">
+              <img src="{{objects.vpImage.url}}" class="executive-img" alt="">
+              <h3>{{objects.excoVP}}</h3>
+              <h4>Vice President</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{objects.introVP}}
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div><!-- End executive item -->
+
+        <div class="swiper-slide">
+          <div class="executive-wrap">
+            <div class="executive-item">
+              <img src="{{objects.sgImage.url}}" class="executive-img" alt="">
+              <h3>{{objects.excoSG}}</h3>
+              <h4>Secretary General</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{objects.introSG}}
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </div><!-- End executive item -->
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section><!-- End executive Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock content %}
