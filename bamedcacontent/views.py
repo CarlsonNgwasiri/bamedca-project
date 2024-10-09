@@ -24,8 +24,10 @@ from django.core.mail import send_mail
 
 def home(request):
     contact=ContactModel.objects.all()
+    home=HomeModel.objects.all()
     context={
-        'contact':contact
+        'contact':contact,
+        'home':home
     }
     return render(request, 'home.html',context=context)
 
@@ -33,10 +35,12 @@ def about(request):
     about=AboutModel.objects.all()
     exco = ExecutiveModel.objects.all()
     contact=ContactModel.objects.all()
+    counter=CounterModel.objects.all()
     context={
         'about':about,
         'exco':exco,
-        'contact':contact
+        'contact':contact,
+        'counter':counter
     }
     return render(request, 'about.html',context=context)
 

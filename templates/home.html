@@ -30,11 +30,13 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex justify-content-center align-items-center">
+    {% for home in home %}
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Know your Culture,<br>Know your Identity</h1>
-      <h2>We are a development and cultural association who is out to develop her community and it's people</h2>
+      <h1>{{home.Intro1}}<br>{{home.Intro2}}</h1>
+      <h2>{{home.Intro3}}</h2>
       <a href="{% url 'about' %}" class="btn-get-started">Discover US</a>
-    </div>
+    {% endfor %}
+  </div>
   </section><!-- End Hero -->
 
   <main id="main">
@@ -44,14 +46,13 @@
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
       <div class="container" data-aos="fade-up">
-
+        {% for home in home %}
         <div class="row">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
               <h3>Why Belong to Bamedca?</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                {{home.whyBelong}}
               </p>
               <div class="text-center">
                 <a href="{% url 'about' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
@@ -64,29 +65,29 @@
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
-                    <h4>Learn Your Culture</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4>{{home.Reason1}}</h4>
+                    <p>{{home.Description1}}</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
-                    <h4>Help in Building Your Community</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <h4>{{home.Reason2}}</h4>
+                    <p>{{home.Description2}}</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-images"></i>
-                    <h4>Connect With Your People</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h4>{{home.Reason3}}</h4>
+                    <p>{{home.Description3}}</p>
                   </div>
                 </div>
               </div>
             </div><!-- End .content-->
           </div>
         </div>
-
+        {% endfor %}
       </div>
     </section><!-- End Why Us Section -->
 

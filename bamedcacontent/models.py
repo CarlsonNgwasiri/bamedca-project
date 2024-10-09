@@ -1,5 +1,17 @@
 from django.db import models
 
+class HomeModel(models.Model):
+    Intro1 = models.CharField(max_length=200)
+    Intro2 = models.CharField(max_length=200)
+    Intro3 = models.CharField(max_length=1000)
+    whyBelong = models.TextField(max_length=1000)
+    Reason1 = models.CharField(max_length=200)
+    Description1 = models.TextField(max_length=1000)
+    Reason2 = models.CharField(max_length=200)
+    Description2 = models.TextField(max_length=1000)
+    Reason3 = models.CharField(max_length=200)
+    Description3 = models.TextField(max_length=1000)
+
 # Model for general "About Us" information on your site
 class AboutModel(models.Model):
     # Title of the About section
@@ -35,6 +47,15 @@ class AboutModel(models.Model):
 
     def __str__(self):
         return self.name
+
+class CounterModel(models.Model):
+    members = models.IntegerField(default=0)
+    branches = models.IntegerField(default=0)
+    quarters = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"Counter (Members: {self.members}, Branches: {self.branches}, Quarters: {self.quarters})"
+
 
 # Model for branch information
 class BranchModel(models.Model):

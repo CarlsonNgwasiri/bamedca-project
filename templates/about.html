@@ -66,26 +66,26 @@
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts section-bg">
       <div class="container">
-
+        {% for counter in counter %}
         <div class="row counters">
 
           <div class="col-lg-4 col-4 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="23457"+ data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="{{ counter.members|default:0 }}"+ data-purecounter-duration="1" class="purecounter"></span>
             <p>Members</p>
           </div>
 
           <div class="col-lg-4 col-4 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="{{ counter.branches|default:0 }}" data-purecounter-duration="1" class="purecounter"></span>
             <p>Branches</p>
           </div>
 
           <div class="col-lg-4 col-4 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="76" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="{{ counter.quarters|default:0 }}" data-purecounter-duration="1" class="purecounter"></span>
             <p>Quaters</p>
           </div>
 
         </div>
-
+        {% endfor %}
       </div>
     </section><!-- End Counts Section -->
 
