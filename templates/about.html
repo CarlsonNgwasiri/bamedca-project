@@ -47,8 +47,11 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>Bamendankwe Developement and Cultural Association</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dicta consequuntur magni est obcaecati quidem molestiae quisquam quos! Illum, tempora.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae rerum quis ab, voluptatum quos facilis nostrum ullam sunt qui eaque!
+            {% for home in home %}
+            <p class="fst-italic">
+              {{home.aboutintro}}
+            </p>
+            {% endfor %}
               <br> Bamedca is composed of four main bodies:
             </p>
             <ul>

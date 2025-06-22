@@ -11,6 +11,7 @@ class HomeModel(models.Model):
     Description2 = models.TextField(max_length=1000)
     Reason3 = models.CharField(max_length=200)
     Description3 = models.TextField(max_length=1000)
+    aboutintro = models.TextField(max_length=1000)
 
 # Model for general "About Us" information on your site
 class AboutModel(models.Model):
