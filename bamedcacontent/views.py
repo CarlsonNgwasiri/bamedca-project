@@ -36,20 +36,13 @@ def about(request):
     exco = ExecutiveModel.objects.all()
     contact=ContactModel.objects.all()
     counter=CounterModel.objects.all()
-<<<<<<< HEAD
     home = HomeModel.objects.all()
-=======
->>>>>>> ba0b4c64ed0f81c1361b5893c9134e147a4228cf
     context={
         'about':about,
         'exco':exco,
         'contact':contact,
-<<<<<<< HEAD
         'counter':counter,
         'home':home
-=======
-        'counter':counter
->>>>>>> ba0b4c64ed0f81c1361b5893c9134e147a4228cf
     }
     return render(request, 'about.html',context=context)
 
