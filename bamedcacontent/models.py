@@ -49,6 +49,19 @@ class AboutModel(models.Model):
     def __str__(self):
         return self.name
 
+    # what we do
+class WhatWeDoModel(models.Model):
+    name = models.TextField(max_length=20)
+    WhatWeDo1 = models.TextField(max_length=1000)
+    WhatWeDo2 = models.TextField(max_length=1000)
+    WhatWeDo3 = models.TextField(max_length=1000)
+    WhatWeDo4 = models.TextField(max_length=1000)
+    WhatWeDo5 = models.TextField(max_length=1000)
+    WhatWeDo6 = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.name
+
 class CounterModel(models.Model):
     members = models.IntegerField(default=0)
     branches = models.IntegerField(default=0)

@@ -37,11 +37,13 @@ def about(request):
     contact=ContactModel.objects.all()
     counter=CounterModel.objects.all()
     home = HomeModel.objects.all()
+    whatwedo = WhatWeDoModel.objects.all()
     context={
         'about':about,
         'exco':exco,
         'contact':contact,
         'counter':counter,
+        'whatwedo':whatwedo,
         'home':home
     }
     return render(request, 'about.html',context=context)

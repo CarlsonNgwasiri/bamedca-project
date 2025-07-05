@@ -47,16 +47,17 @@
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>Bamendankwe Developement and Cultural Association</h3>
             <p class="fst-italic">
-            {% for home in home %}
+              {% for home in home %}
             <p class="fst-italic">
               {{home.aboutintro}}
             </p>
             {% endfor %}
-              <br> Bamedca is composed of four main bodies:
+            <br> Bamedca partners with other bodies:
             </p>
             <ul>
               {% for about in about %}
-              <li><i class="bi bi-check-circle"></i> <a href="{% url 'about-details' ID=about.id%}">{{about.title}}</a></li>
+              <li><i class="bi bi-check-circle"></i> <a href="{% url 'about-details' ID=about.id%}">{{about.title}}</a>
+              </li>
               {% endfor %}
             </ul>
 
@@ -66,64 +67,184 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
-      <div class="container">
-        {% for counter in counter %}
-        <div class="row counters">
-
-          <div class="col-lg-4 col-4 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="{{ counter.members|default:0 }}"+ data-purecounter-duration="1" class="purecounter"></span>
-            <p>Members</p>
-          </div>
-
-          <div class="col-lg-4 col-4 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="{{ counter.branches|default:0 }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Branches</p>
-          </div>
-
-          <div class="col-lg-4 col-4 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="{{ counter.quarters|default:0 }}" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Quaters</p>
-          </div>
-
-        </div>
-        {% endfor %}
-      </div>
-    </section><!-- End Counts Section -->
-
-    <!-- ======= executive Section ======= -->
+    <!-- ======= What We Do Section ======= -->
     <section id="executive" class="executive">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
-          <h2>National Executive</h2>
-          <p>Dynamic Team</p>
+          <h2>Here's</h2>
+          <h3>What We Do</h3>
         </div>
-        
-        <div class="executive-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-            {% for exco in exco %}
-            <div class="swiper-slide">
-              <div class="executive-wrap">
-                <div class="executive-item">
-                  <img src="{{exco.image.url}}" class="executive-img" alt="">
-                  <h3>{{exco.name}}</h3>
-                  <h4>{{exco.role}}</h4>
+
+        <!-- ======= What we do Section ======= -->
+        <section id="why-us" class="why-us">
+          <div class="container" data-aos="fade-up">
+            {% for whatwedo in whatwedo %}
+            <div class="row">
+              <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="content">
+                  <h3>We Mobilize Resources</h3>
                   <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    {{exco.intro}}
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    {{whatwedo.WhatWeDo1}}
                   </p>
+                  <div class="text-center">
+                    <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                  </div>
                 </div>
               </div>
-            </div><!-- End executive item -->
+              <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="content">
+                  <h3>We Promote Quality Education</h3>
+                  <p>
+                    {{whatwedo.WhatWeDo2}}
+                  </p>
+                  <div class="text-center">
+                    <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="content">
+                  <h3>We Enhance Healthcare Access</h3>
+                  <p>
+                    {{whatwedo.WhatWeDo3}}
+                  </p>
+                  <div class="text-center">
+                    <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
             {% endfor %}
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section><!-- End executive Section -->
+        </section><!-- End What we do Section -->
+
+        <!-- ======= Some Figures Section ======= -->
+        <section id="executive" class="executive">
+          <div class="container" data-aos="fade-up">
+            <div class="section-title">
+              <h2>A Look At</h2>
+              <h3>Some Figures</h3>
+            </div>
+
+
+            <!-- ======= Counts Section ======= -->
+            <section id="counts" class="counts section-bg">
+              <div class="container">
+                {% for counter in counter %}
+                <div class="row counters">
+
+                  <div class="col-lg-4 col-4 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="{{ counter.members|default:0 }}" +
+                      data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Members</p>
+                  </div>
+
+                  <div class="col-lg-4 col-4 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="{{ counter.branches|default:0 }}"
+                      data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Branches</p>
+                  </div>
+
+                  <div class="col-lg-4 col-4 text-center">
+                    <span data-purecounter-start="0" data-purecounter-end="{{ counter.quarters|default:0 }}"
+                      data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Quaters</p>
+                  </div>
+
+                </div>
+                {% endfor %}
+              </div>
+            </section><!-- End Counts Section -->
+
+            <!-- ======= More on What We Do Section ======= -->
+            <section id="executive" class="executive">
+              <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                  <h2>More on</h2>
+                  <h4>What We Do</h4>
+                </div>
+
+                <!-- ======= What we do Section ======= -->
+                <section id="why-us" class="why-us">
+                  <div class="container" data-aos="fade-up">
+                    {% for whatwedo in whatwedo %}
+                    <div class="row">
+                      <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="content">
+                          <h3>We Empower Youth and Women</h3>
+                          <p>
+                            {{whatwedo.WhatWeDo4}}
+                          </p>
+                          <div class="text-center">
+                            <a href="{% url 'projects' %}" class="more-btn">Learn More <i
+                                class="bx bx-chevron-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="content">
+                          <h3>We Foster Sustainable Agriculture</h3>
+                          <p>
+                            {{whatwedo.WhatWeDo5}}
+                          </p>
+                          <div class="text-center">
+                            <a href="{% url 'projects' %}" class="more-btn">Learn More <i
+                                class="bx bx-chevron-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 d-flex align-items-stretch">
+                        <div class="content">
+                          <h3>We Support Community-Led Initiatives</h3>
+                          <p>
+                            {{whatwedo.WhatWeDo6}}
+                          </p>
+                          <div class="text-center">
+                            <a href="{% url 'projects' %}" class="more-btn">Learn More <i
+                                class="bx bx-chevron-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    {% endfor %}
+                  </div>
+                </section><!-- End What we do Section -->
+
+
+                <!-- ======= executive Section ======= -->
+                <section id="executive" class="executive">
+                  <div class="container" data-aos="fade-up">
+
+                    <div class="section-title">
+                      <h2>National Executive</h2>
+                      <p>Dynamic Team</p>
+                    </div>
+
+                    <div class="executive-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                      <div class="swiper-wrapper">
+                        {% for exco in exco %}
+                        <div class="swiper-slide">
+                          <div class="executive-wrap">
+                            <div class="executive-item">
+                              <img src="{{exco.image.url}}" class="executive-img" alt="">
+                              <h3>{{exco.name}}</h3>
+                              <h4>{{exco.role}}</h4>
+                              <p>
+                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                {{exco.intro}}
+                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                              </p>
+                            </div>
+                          </div>
+                        </div><!-- End executive item -->
+                        {% endfor %}
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </section><!-- End executive Section -->
 
   </main><!-- End #main -->
 
