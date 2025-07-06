@@ -85,7 +85,7 @@ class BranchModel(models.Model):
     president = models.CharField(max_length=50)
     fonRep = models.CharField(max_length=50)
     # Quarters associated with this branch
-    quater = models.CharField(max_length=50)
+    quarter = models.CharField(max_length=50)
     # Venue for meetings
     meetingVenue = models.CharField(max_length=50)
     # Members associated with the branch
@@ -163,8 +163,6 @@ class ExecutiveModel(models.Model):
 
 # Model for contact information related to quarters
 class ContactModel(models.Model):
-    # Quarter or division for which the contact information is relevant
-    quater = models.CharField(max_length=100, default='')
     # Phone number for contact
     phone = models.CharField(max_length=100, default='')
     # Email address for contact
