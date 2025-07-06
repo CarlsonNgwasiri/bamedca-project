@@ -67,57 +67,43 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= What We Do Section ======= -->
-    <section id="executive" class="executive">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Here's</h2>
-          <h3>What We Do</h3>
-        </div>
-
-        <!-- ======= What we do Section ======= -->
-        <section id="why-us" class="why-us">
-          <div class="container" data-aos="fade-up">
-            {% for whatwedo in whatwedo %}
-            <div class="row">
-              <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="content">
-                  <h3>Mobilize Resources</h3>
-                  <p>
-                    {{whatwedo.WhatWeDo1}}
-                  </p>
-                  <div class="text-center">
-                    <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="content">
-                  <h3>Promote Quality Education</h3>
-                  <p>
-                    {{whatwedo.WhatWeDo2}}
-                  </p>
-                  <div class="text-center">
-                    <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="content">
-                  <h3>Enhance Healthcare Access</h3>
-                  <p>
-                    {{whatwedo.WhatWeDo3}}
-                  </p>
-                  <div class="text-center">
-                    <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            {% endfor %}
+ <!-- ======= What we do Section ======= -->
+<section id="why-us" class="why-us">
+  <div class="container" data-aos="fade-up">
+    {% for whatwedo in whatwedo %}
+    <div class="row">
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="content">
+          <h3>Mobilize Resources</h3>
+          <p>{{ whatwedo.WhatWeDo1 }}</p>
+          <div class="text-center">
+            <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
           </div>
-        </section><!-- End What we do Section -->
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="content">
+          <h3>Promote Quality Education</h3>
+          <p>{{ whatwedo.WhatWeDo2 }}</p>
+          <div class="text-center">
+            <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="content">
+          <h3>Enhance Healthcare Access</h3>
+          <p>{{ whatwedo.WhatWeDo3 }}</p>
+          <div class="text-center">
+            <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section><!-- End What we do Section -->
+
 
         <!-- ======= Some Figures Section ======= -->
         <section id="executive" class="executive">
@@ -165,52 +151,43 @@
                   <h4>What We Do</h4>
                 </div>
 
-                <!-- ======= What we do Section ======= -->
-                <section id="why-us" class="why-us">
-                  <div class="container" data-aos="fade-up">
-                    {% for whatwedo in whatwedo %}
-                    <div class="row">
-                      <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="content">
-                          <h3>Empower Youth and Women</h3>
-                          <p>
-                            {{whatwedo.WhatWeDo4}}
-                          </p>
-                          <div class="text-center">
-                            <a href="{% url 'projects' %}" class="more-btn">Learn More <i
-                                class="bx bx-chevron-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="content">
-                          <h3>Foster Sustainable Agriculture</h3>
-                          <p>
-                            {{whatwedo.WhatWeDo5}}
-                          </p>
-                          <div class="text-center">
-                            <a href="{% url 'projects' %}" class="more-btn">Learn More <i
-                                class="bx bx-chevron-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="content">
-                          <h3>Support Community-Led Initiatives</h3>
-                          <p>
-                            {{whatwedo.WhatWeDo6}}
-                          </p>
-                          <div class="text-center">
-                            <a href="{% url 'projects' %}" class="more-btn">Learn More <i
-                                class="bx bx-chevron-right"></i></a>
-                          </div>
-                        </div>
-                      </div>
+<!-- ======= What we do Section ======= -->
+<section id="why-us" class="why-us">
+  <div class="container" data-aos="fade-up">
+    {% for whatwedo in whatwedo %}
+    <div class="row">
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="content">
+          <h3>Empower Youth and Women</h3>
+          <p>{{ whatwedo.WhatWeDo4 }}</p>
+          <div class="text-center">
+            <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="content">
+          <h3>Foster Sustainable Agriculture</h3>
+          <p>{{ whatwedo.WhatWeDo5 }}</p>
+          <div class="text-center">
+            <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+        <div class="content">
+          <h3>Support Community-Led Initiatives</h3>
+          <p>{{ whatwedo.WhatWeDo6 }}</p>
+          <div class="text-center">
+            <a href="{% url 'projects' %}" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section><!-- End What we do Section -->
 
-                    </div>
-                    {% endfor %}
-                  </div>
-                </section><!-- End What we do Section -->
 
 
                 <!-- ======= executive Section ======= -->
