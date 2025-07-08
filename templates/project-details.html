@@ -37,40 +37,42 @@
       </div>
     </div><!-- End Breadcrumbs -->
 
-    
 
 
-    <!-- ======= Cource Details Section ======= -->
+
+    <!-- ======= Course Details Section ======= -->
     <section id="branch-details" class="branch-details">
-      <div class="container" data-aos="fade-up" >
-        
-        <div class="row">
-          
-            <img src="{{objects.image.url}}" class="executive-img" alt="" height="600" width="400">
-            <h3>{{objects.title}}</h3>
-            <p>
-              {{objects.description}}
-            </p>
-          </div><br><br>
-          <div class="section-title">
-            <h2>More On Project</h2>
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <img src="{{ objects.image.url }}" class="img-fluid w-100 mb-4" alt="Project Image">
+            <h3>{{ objects.title }}</h3>
+            <p style="text-align: justify;">{{ objects.description }}</p>
           </div>
-          <p>
-            {{objects.paragraph1}}
-          </p><br>
-          <p>
-            {{objects.paragraph2}}
-          </p><br>
-          <p>
-            {{objects.paragraph3}}
-          </p><br>
-          
-        
+        </div>
 
-      </div>
-    </section><!-- End Cource Details Section -->
+        <br><br>
 
-    
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-start">
+              <h2>More On Project</h2>
+            </div>
+          </div>
+          <br><br>
+          <div class="col-lg-8">
+            <p style="text-align: justify;">{{ objects.paragraph1 }}</p><br>
+            <p style="text-align: justify;">{{ objects.paragraph2 }}</p><br>
+            <p style="text-align: justify;">{{ objects.paragraph3 }}</p><br>
+          </div>
+
+
+        </div>
+    </section><!-- End Course Details Section -->
+
+
+
 
 
   </main><!-- End #main -->

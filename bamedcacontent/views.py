@@ -114,7 +114,7 @@ def projectDetails(request,ID):
     return render(request,'project-details.html',context=context)
 
 def eventsDetails(request,ID):
-    object=ProjectModel.objects.get(id=ID)
+    object=EventModel.objects.get(id=ID)
     contact=ContactModel.objects.all()
     print(object)
     context={
